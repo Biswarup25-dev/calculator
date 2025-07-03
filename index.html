@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 <body>
+    
     <h1>Working Calculator</h1>
-
     <div id="container">
-        
+        <div id="theme-btn" class="far fa-moon"></div>
         <div class="in">
+            
+        <input id= "Hdisplay" readonly>
         <input id= "display" readonly>
         </div>
         <div class="box">
-        <button onclick="clearbtn()" class="btn1">C</button>
+            
+        <button onclick="aclearbtn()" class="btn1">AC</button>
         <button onclick="rclick('%')" class="btn1">%</button>
-        
-        <button onclick="rclick('/')" class="btn1">÷</button>
-        <button onclick="calculate()" class="btn2">=</button><br>
+        <button onclick="onlyOne()" class="btn1">C</button>
+        <button onclick="rclick('/')" class="btn1">÷</button><br>
+
     
         <button onclick="rclick('7')" class="btn">7</button>
         <button onclick="rclick('8')" class="btn">8</button>
@@ -36,23 +40,51 @@
         <button onclick="rclick('00')" class="btn">00</button>
         <button onclick="rclick('0')" class="btn">0</button>
         <button onclick="rclick('.')" class="btn">.</button>
+        <button onclick="calculate()" class="btn2">=</button><br>
     
         </div>
         <p>Don't worry design by @biswarup</p>
     </div>
-    <script>
-    const display = document.getElementById("display");
+ 
+<script>
+const display = document.getElementById("display");
+const hDisplay = document.getElementById("Hdisplay");
 
-        function rclick(input){
-            display.value += input;
-        }
+function rclick(input) {
+    display.value += input;
+}
 
-        function clearbtn(){
-            display.value = "";
-        }
-        function calculate(){
-            display.value = eval(display.value);
-        }
-         </script>
+function aclearbtn() {
+    display.value = "";
+    hDisplay.value = ""; // Clear history too if you want
+}
+
+function calculate() {
+    try {
+        const expression = display.value;
+        const result = eval(expression);
+        hDisplay.value += expression + " = " + result + " | ";
+        display.value = result;
+    } catch (e) {
+        display.value = "Error";
+    }
+}
+
+function onlyOne() {
+    display.value = display.value.toString().slice(0, -1);
+}
+//dark mode
+const themeBtn = document.getElementById("theme-btn");
+themeBtn.onclick = () => {
+  themeBtn.classList.toggle("fa-sun");
+  if (themeBtn.classList.contains("fa-sun")) {
+    document.body.classList.add("changeTheme");
+  } else {
+    document.body.classList.remove("changeTheme");
+  }
+}
+</script>
+
+</script>
 </body>
 </html>
