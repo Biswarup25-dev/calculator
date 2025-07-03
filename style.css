@@ -5,7 +5,7 @@ body{
     margin: 0 auto;
     width: 450px;
     height: 600px;
-    padding-top: 36px;
+    padding-top: 10px;
     background-color: rgb(174, 172, 172);
     border-radius: 15px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.865), 0 0 15px rgba(0, 0, 0, 0.865);
@@ -20,16 +20,26 @@ h1{
 #display{
     
     width: 83%;
-    border: 2px solid rgba(255, 255, 255, 0.573);
+    border: 0px solid rgba(255, 255, 255, 0.573);
     box-shadow: 0 0 30px 0.5px rgba(0, 0, 0, 0.461);
-    border-radius: 14px;
-    height: 90px;
+    border-radius: 0px 0px 14px 14px;
+    height: 80px;
     text-align: right;
     justify-content: center;
     background-color: rgb(37, 34, 34);
     color: rgb(255, 255, 255);
     font-size: 50px;
     padding-right: 9px;
+    
+}
+#Hdisplay{
+    background-color: rgb(37, 34, 34);
+    width: 84.5%;
+    height: 26px;
+    border-radius:  14px 14px 0px 0px;
+    color: rgba(3, 226, 25, 0.622);
+    text-align: right;
+    border: 0;
 }
 
 .box{
@@ -37,14 +47,14 @@ h1{
     text-align: center;
     justify-content: space-between;
     font-size: 75px;
-    padding-top: 25px;
+    padding-top: 0px;
 }
 
 .btn,.btn1,.btn2{
     color: blue;
     background-color: rgb(174, 172, 172);
     font-size: 45px;
-    
+    transition: 0.5s;
     width: 67px;
     border:  2px solid rgb(174, 172, 172);
     box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.461);
@@ -52,10 +62,14 @@ h1{
 
 .btn1{
     background-color: rgb(255, 145, 0);
+    font-size: 40px;
+   
+    
 }
 .btn2{
     background-color: rgb(17, 0, 255);
     color: aliceblue;
+    
 }
 .in{
     text-align: center;
@@ -66,7 +80,7 @@ h1{
     width: 59px;
 }
 .btn:hover{
-    background-color: rgba(255, 255, 255, 0.358);
+    background-color: rgb(255, 255, 255);
 
 }
 .btn1:hover{
@@ -88,9 +102,25 @@ h1{
 p{
     font-size: 7px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
     font-family: cursive;
+    transition: 0.6s;
 }
 p:hover{
     font-size: 15px;
+}
+
+/* Toggle Dark Theme */
+#theme-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #596AFF;
+  padding-left: 10px;
+}
+#theme-btn:hover {
+  color: #ffff00;
+}
+.changeTheme {
+  background: #1D1E22;
+  color: #eee;
 }
